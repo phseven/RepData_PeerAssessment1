@@ -6,7 +6,6 @@ output: html_document
 Input: activity.csv file (assumed to be in same directory as this R script)
 ---
     
-    
 ### Load and preprocess the data
 
 1. Load the data into a datatable ad.
@@ -39,7 +38,7 @@ ad[, dt := as.IDate(dt, format="%Y-%m-%d")]
 
 setkey(ad, dt, intv)
 ```
-     
+  
 
 ### Calculate total number of steps taken per day   
 
@@ -104,7 +103,6 @@ madmax <- mad[avg.step == max(avg.step), list(Max.Avg.Step.Interval = intv,
 ```
       
 
-
 - The 5-minute interval (averaged across all days) with the 
 maximum number of steps = `r madmax$Max.Avg.Step.Interval`
      
@@ -118,7 +116,6 @@ Calculate the number of rows in ad datatable with missing values.
 na.cnt <- ad[is.na(step), .N]
 
 ```
-   
 
 
 1. Total number of rows with missing values = `r na.cnt`
